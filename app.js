@@ -4,9 +4,13 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const config = require('./config/globals');
+
 
 const index = require('./controllers/index');
-const users = require('./controllers/users');
+const teams = require('./controllers/teams');
+const games = require('./controllers/games');
 
 const app = express();
 
