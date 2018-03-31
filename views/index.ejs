@@ -1,41 +1,17 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>
-		<%= title %>
-	</title>
-	<!--CSS Frame works and addons-->
-	<link rel="stylesheet" href="bower_components/sanitoze-css/sanitize.css">
-	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" href="bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css">
-	<!--Custom CSS Files-->
-	<link rel="stylesheet" href="stylesheets/main.css">
-</head>
-
-<body>
-	<header>
-		<!--Global Site Navigation-->
-		<nav class="navbar navbar-expand-lg navbar-light bg-light">
-			<a class="navbar-brand" href="#">Navbar</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-				<div class="navbar-nav">
-					<a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-					<a class="nav-item nav-link" href="#">Features</a>
-					<a class="nav-item nav-link" href="#">Pricing</a>
-					<a class="nav-item nav-link disabled" href="#">Disabled</a>
-				</div>
-			</div>
-		</nav>
-
-	</header>
-	<h1><%= title %></h1>
-	<p>Welcome to
-		<%= title %>
-	</p>
-</body>
-
-</html>
+<% include shared/header%>
+	<div class="carousel_overlay">
+		<h1>Welcome to <%= title %></h1>
+		<p> The best free app to keep track of you favourite sports teams.</p>
+		<a role="button" class="btn btn-secondary btn-lg" href="/login">Sign in</a>
+	</div>
+	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    </div>
+    <div class="carousel-item">
+    </div>
+    <div class="carousel-item">
+    </div>
+  </div>
+</div>
+<% include shared/footer%>

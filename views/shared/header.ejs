@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>
+		<%= title %>
+	</title>
+	<!--CSS Frame works and addons-->
+	<link rel="stylesheet" href="bower_components/sanitoze-css/sanitize.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+	<!--Custom CSS Files-->
+	<link rel="stylesheet" href="stylesheets/main.css">
+</head>
+
+<body class=" animated fadeIn">
+	<header>
+		<!--Global Site Navigation-->
+		<nav class="navbar navbar-dark bg-primary justify-content-between">
+			<div class="mainNav">
+				  <a class="logo" href="#" height="100px"><img src="/images/logo2.png" alt="sport tracker logo" height="100px"></a>
+					<ul>
+						<li><a href="#">Home</a></li>
+						<li><a href="#">About</a></li>
+						<li><a href="#">Team Tracker</a></li>
+						<li><a href="#">Game Tracker</a></li>
+					</ul>
+			</div>
+
+
+	<div class="reg/login">
+		<%if (user == undefined) {%>
+		<a role="button" href="/login" class="btn btn-outline-light my-2 my-sm-0">Login</a>
+		<a role="button" href="/register" class="btn btn-outline-light my-2 my-sm-0">Register</a>
+		<%} else {%>
+		<a role="button" href="#" class="btn btn-outline-light my-2 my-sm-0">Logout</a>
+		<%}%>
+	</div>
+</nav>
+	</header>

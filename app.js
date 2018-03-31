@@ -5,8 +5,12 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+//passport
+const session = require('express-session');
+const passport = require('passport');
+const localStrategy = require('passport-local').Strategy;
+//DB connection
 const config = require('./config/globals');
-
 
 const index = require('./controllers/index');
 const teams = require('./controllers/teams');
@@ -26,6 +30,27 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// db connection
+mongoose.connect(config.db);
+
+// passport configuration
+app.use(session({
+    secret: 'any string for salting here',
+    resave: true,
+    saveUninitialized: false
+}));
+
+// initialize passport and the session
+app.use(passport.initialize());
+app.use(passport.session());
+// reference User model
+const User = require('./models/user');
+// create local strategy
+passport.use(User.createStrategy());
+
+// session management for users
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
 app.use('/', index);
 
 // catch 404 and forward to error handler

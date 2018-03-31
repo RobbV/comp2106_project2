@@ -1,8 +1,154 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	max-width: 1440px;
 }
-
+.navbar{
+	padding: 0;
+}
+nav div a img{
+    height: 80px;
+    background-position: 50% 50%;
+    background-repeat:   no-repeat;
+    background-size:     cover;
+}
+nav div:first-of-type {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+nav div:first-of-type ul{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+nav div:first-of-type ul li {
+	padding-left: 10px;
+	padding-right: 10px;
+	border-right: 3px solid #fff;
+}
+nav div:first-of-type ul li:last-of-type {
+	border: 0px;
+}
+nav div:first-of-type ul li a {
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #fff;
+	text-decoration: none;
+	font-size: 15px;
+}
+nav div:first-of-type ul li a:hover {
+	color: #05253e;
+	text-decoration: none;
+	transition: .3s;
+}
+nav div:last-of-type{
+	margin-right: 1rem;
+}
 a {
   color: #00B7FF;
+}
+.carousel_overlay {
+	position: absolute;
+	z-index: 2;
+	background-color: rgba(0,0,0,0.5);
+	width: 100vw;
+	height: 80vh;
+	color: #fff;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.btn-secondary {
+	background-color: #F6A20F;
+	border: none;
+}
+.carousel{
+	/* position: absolute; */
+	z-index: -1;
+}
+.carousel .carousel-item:first-of-type {
+overflow: hidden;
+height: 80vh;
+background-image: url("../images/sport_image1.jpg");
+background-position: center;
+}
+.carousel .carousel-item:nth-last-of-type(2) {
+overflow: hidden;
+height: 80vh;
+background-image: url("../images/sport_image2.jpg");
+background-position: center;
+}
+.carousel .carousel-item:last-of-type {
+overflow: hidden;
+height: 80vh;
+background-image: url("../images/sport_image3.jpg");
+background-position: center;
+}
+footer{
+	background-color: #23272b;
+	height: 80px;
+	font-size: 12px;
+	color: #fff;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.social-media{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-left: 2rem;
+}
+.social-media h6 {
+	margin: 0;
+}
+footer ul {
+	display: flex;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+}
+footer ul li{
+	font-size: 20px;
+	margin-left: 10px;
+	color: #fff;
+}
+footer ul li a {
+	color: #fff;
+}
+footer p {
+	margin: 0;
+	margin-right: 10px;
+}
+/*form controls*/
+form {
+	width: 100vw;
+	height: 100vh;
+	background: rgba(0,0,0,0.5);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+form input {
+	background: none;
+	width: 40vw;
+	color: #0f7df6;
+	padding: 10px;
+	border: none;
+	border-bottom: 2px solid #fff;
+	outline: none;
+}
+form .btn {
+	width: 40vw;
+}
+::placeholder {
+	color: #fff;
+}
+form div:last-of-type {
+	margin-top: 20px;
 }

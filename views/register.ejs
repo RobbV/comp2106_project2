@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>
+		<%= title %>
+	</title>
+	<!--CSS Frame works and addons-->
+	<link rel="stylesheet" href="bower_components/sanitoze-css/sanitize.css">
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
+	<!--Custom CSS Files-->
+	<link rel="stylesheet" href="stylesheets/main.css">
+	<link rel="stylesheet" href="stylesheets/registerbackground.css">
+	</head>
+	<body class="animated fadeIn">
+		<form method="post">
+			<h2><%= title%></h2>
+			<%# fullname %>
+			<div class="form-group">
+				<label for="fullname" style="display: none;">Fullname</label>
+				<input type="text" name="fullname" placeholder="Full name">
+			</div>
+			<%# username %>
+			<div class="form-group">
+				<label for="username" style="display: none;">Email</label>
+				<input type="text" name="username" placeholder="Email">
+			</div>
+			<%# password %>
+			<div class="form-group">
+				<label for="password" style="display: none;">Password</label>
+				<input type="password" name="password" placeholder="Password">
+			</div>
+			<%# confirm %>
+			<div class="form-group">
+				<label for="confirm" style="display: none;">Confirm Password</label>
+				<input type="password" name="confirm" placeholder="Confirm Password">
+			</div>
+			<%# form controls %>
+			<div class="form-group">
+				<button type="submit" name="button" class="btn btn-outline-light btn-block">Register</button>
+				<a role="button" href="/" class="btn btn-outline-light btn-block" >Back</a>
+			</div>
+		</form>
+	</body>
+</html>

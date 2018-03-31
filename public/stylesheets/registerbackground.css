@@ -1,0 +1,14 @@
+body {
+	background-image: url('../images/image_rubgy.jpg');
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+h2{
+	color: #fff;
+	text-transform: uppercase;
+	font-weight: bold;
+	margin-bottom: 40px;
+}
