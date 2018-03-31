@@ -1,0 +1,20 @@
+{
+  "name": "public",
+  "homepage": "https://github.com/RobbV/comp2106_project2",
+  "authors": [
+    "RobbV <rob.vdg.14@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "sanitize-css": "^5.0.0"
+  }
+}
