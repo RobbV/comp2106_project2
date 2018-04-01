@@ -1,3 +1,36 @@
 <% include ../shared/header %>
 
-<% include ../shared/footer %>
+    <div class="team container">
+      <h2>Team Tracker</h2>
+      <%if(user){%>
+        <a href="/teamtracker/add" class="btn btn-outline-secondary" style="margin-bottom: 10px;">Add a new Team</a>
+        <%}%>
+          <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Team Name:</th>
+                <th scope="col">Home City</th>
+                <th scope="col">Standings</th>
+                <th scope="col">Type Of Sport</th>
+								<%if (user) {%>
+										<th scope="col">controls</th>
+								<%}%>
+              </tr>
+            </thead>
+            <tbody>
+							<% for(let i = 0; i < teams.length; i++) {%>
+              <tr>
+                <td><%= teams[i].teamName%></td>
+                <td><%= teams[i].location%></td>
+                <td><%= teams[i].standings%></td>
+                <td><%= teams[i].sportType%></td>
+								<%if(user){%>
+									<td><a href="teamTracker/edit/<%=teams[i]._id%>" class="btn btn-success btn-sm">Edit</a>
+									<a href="teamTracker/delete/<%=teams[i]._id%>" onclick="return  confirm('are you sure you want to delete <%= teams[i].teamName %>)"class="btn btn-danger btn-sm">Delete</a></td>
+								<%}%>
+              </tr>
+							<%}%>
+            </tbody>
+          </table>
+				</div>
+  <% include ../shared/footer %>

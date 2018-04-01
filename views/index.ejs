@@ -1,8 +1,14 @@
-<% include shared/header%>
+<% include shared/header %>
 	<div class="carousel_overlay">
+	<% if (user == undefined){%>
 		<h1>Welcome to <%= title %></h1>
-		<p> The best free app to keep track of you favourite sports teams.</p>
-		<a role="button" class="btn btn-secondary btn-lg" href="/login">Sign in</a>
+		<%} else {%>
+		<h1>Welcome to <%= user.username %></h1>
+		<%}%>
+		<% if (user == undefined){%>
+			<p> The best free app to keep track of you favourite sports teams.</p>
+			<a role="button" class="btn btn-secondary btn-lg" href="/login">Sign in</a>
+		<%}%>
 	</div>
 	<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">

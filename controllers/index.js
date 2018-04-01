@@ -1,12 +1,16 @@
 var express = require('express');
 var router = express.Router();
+//passport
+const passport = require('passport');
+// model
 const User = require('../models/user')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', {
-		title: 'Sports Team Tracker',
-		user: req.user
+		title: 'Sport Tracker',
+		user: req.user,
+		username: req.username
 	});
 });
 /*==========================================
@@ -55,6 +59,12 @@ router.get('/login', (req,res,next) => {
 		user: req.user
 	});
 });
+//POST: /Login
+router.post('/login', passport.authenticate('local', {
+	  successRedirect: '/',
+	    failureRedirect: '/login',
+	    failureMessage: 'Invalid Login'
+	}));
 /*==========================================*/
 /*==========================================
 Logout

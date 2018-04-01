@@ -7,6 +7,7 @@
 	<title>
 		<%= title %>
 	</title>
+	<link rel="icon" href="/images/icon.ico">
 	<!--CSS Frame works and addons-->
 	<link rel="stylesheet" href="bower_components/sanitoze-css/sanitize.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -14,10 +15,10 @@
 	<link rel="stylesheet" href="bower_components/animate.css/animate.min.css">
 	<!--Custom CSS Files-->
 	<link rel="stylesheet" href="stylesheets/main.css">
-	<link rel="stylesheet" href="stylesheets/registerbackground.css">
+	<link rel="stylesheet" href="stylesheets/loginbackground.css">
 	</head>
 	<body class="animated fadeIn">
-		<form class="" action="index.html" method="post">
+		<form method="post">
 			<h2><%= title%></h2>
 			<%# username %>
 			<div class="form-group">
@@ -31,7 +32,7 @@
 			</div>
 			<%# form controls %>
 			<div class="form-group">
-				<button type="submit" name="button" class="btn btn-outline-light btn-block">Register</button>
+				<button type="submit" name="button" class="btn btn-outline-light btn-block">Login</button>
 				<a role="button" href="/" class="btn btn-outline-light btn-block" >Back</a>
 			</div>
 		</form>

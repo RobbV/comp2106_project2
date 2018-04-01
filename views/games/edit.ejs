@@ -1,4 +1,57 @@
-<% include ../shared/header %>
-
-
-<% include ../shared/footer %>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>
+		<%= title %>
+	</title>
+	<link rel="icon" href="/images/icon.ico">
+	<!--CSS Frame works and addons-->
+	<link rel="stylesheet" href="/bower_components/sanitoze-css/sanitize.css">
+	<link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/bower_components/font-awesome/web-fonts-with-css/css/fontawesome-all.min.css">
+	<link rel="stylesheet" href="/bower_components/animate.css/animate.min.css">
+	<!--Custom CSS Files-->
+	<link rel="stylesheet" href="/stylesheets/main.css">
+	<link rel="stylesheet" href="/stylesheets/registerbackground.css">
+	</head>
+	<body class="animated fadeIn">
+<form method="post">
+	<h2><%= title%></h2>
+	<div class="form-group">
+		<label for="sportType" style="display: none;">Sport Type</label>
+		<input type="text" name="sportType" value="<%=game.sportType%>">
+	</div>
+	<div class="form-group">
+		<label for="teamOne" style="display: none;">team one</label>
+		<input type="text" name="teamOne" value="<%=game.teamOne%>">
+	</div>
+	<div class="form-group">
+		<label for="teamTwo" style="display: none;">Team Two</label>
+		<input type="text" name="teamTwo" value="<%=game.teamTwo%>">
+	</div>
+	<div class="form-group">
+		<label for="scoreOne" style="display: none;">Score One</label>
+		<input type="number" name="scoreOne" value="<%=game.scoreOne%>">
+	</div>
+	<div class="form-group">
+		<label for="scoreTwo" style="display: none;">Score Two</label>
+		<input type="number" name="scoreTwo" value="<%=game.scoreTwo%>">
+	</div>
+	<div class="form-group">
+		<label for="eventDate" style="display: none;">Event Date</label>
+		<input type="date" name="eventDate" value="<%=game.eventDate%>">
+	</div>
+	<div class="form-group">
+		<label for="location" style="display: none;">location</label>
+		<input type="text" name="location" value="<%=game.location%>">
+	</div>
+	<%# form controls %>
+	<div class="form-group">
+		<button type="submit" name="button" class="btn btn-outline-light btn-block">Save Changes</button>
+		<a role="button" href="/gameTracker" class="btn btn-outline-light btn-block" >Back</a>
+	</div>
+</body>
+</html>

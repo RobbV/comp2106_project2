@@ -1,3 +1,24 @@
 <% include ../shared/header %>
-
+<body>
+	<div class="games container">
+		<h2>Game Tracker</h2>
+		<%if(user){%>
+			<a href="/gametracker/add" class="btn btn-outline-secondary" style="margin-bottom: 10px;">Add a new game</a>
+			<%}%>
+		<% for(let i = 0; i < games.length; i++){ %>
+		<div class="card">
+			<h5 class="card-header">Sport Type: <%= games[i].sportType %></h5>
+			<div class="card-body">
+				<h5 class="card-title"> <%= games[i].teamOne %> <%= games[i].scoreOne %> VS <%= games[i].teamTwo %> <%= games[i].scoreTwo %></h5>
+				<p class="card-text">Location: <%= games[i].location %></p>
+				<p class="card-text">Event Date: <%= games[i].eventDate %></p>
+				<%if(user){%>
+					<a href="/gametracker/edit/<%=games[i]._id%>" class="btn btn-success btn-sm">Edit</a>
+					<a href="/gametracker/delete/<%= games[i]._id%>" onclick="return  confirm('are you sure you want to delete <%= games[i].teamOne %> VS <%= games[i].teamTwo %>')" class="btn btn-danger btn-sm">Delete</a>
+					<%}%>
+			</div>
+		</div>
+		<%}%>
+	</div>
+</body>
 <% include ../shared/footer %>

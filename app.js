@@ -51,8 +51,10 @@ passport.use(User.createStrategy());
 // session management for users
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+// map the controllers
 app.use('/', index);
-
+app.use('/teamtracker', teams);
+app.use('/gametracker', games);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

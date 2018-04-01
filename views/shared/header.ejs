@@ -8,6 +8,7 @@
 	<title>
 		<%= title %>
 	</title>
+	<link rel="icon" href="/images/icon.ico">
 	<!--CSS Frame works and addons-->
 	<link rel="stylesheet" href="bower_components/sanitoze-css/sanitize.css">
 	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
@@ -24,10 +25,10 @@
 			<div class="mainNav">
 				  <a class="logo" href="#" height="100px"><img src="/images/logo2.png" alt="sport tracker logo" height="100px"></a>
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="/">Home</a></li>
 						<li><a href="#">About</a></li>
-						<li><a href="#">Team Tracker</a></li>
-						<li><a href="#">Game Tracker</a></li>
+						<li><a href="/teamtracker">Team Tracker</a></li>
+						<li><a href="/gametracker">Game Tracker</a></li>
 					</ul>
 			</div>
 
@@ -37,7 +38,7 @@
 		<a role="button" href="/login" class="btn btn-outline-light my-2 my-sm-0">Login</a>
 		<a role="button" href="/register" class="btn btn-outline-light my-2 my-sm-0">Register</a>
 		<%} else {%>
-		<a role="button" href="#" class="btn btn-outline-light my-2 my-sm-0">Logout</a>
+		<a role="button" href=/logout class="btn btn-outline-light my-2 my-sm-0">Logout</a>
 		<%}%>
 	</div>
 </nav>
