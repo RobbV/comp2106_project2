@@ -152,6 +152,9 @@ form .btn {
 form div:last-of-type {
 	margin-top: 20px;
 }
+form label {
+	color: #fff;
+}
 .games, .team {
 	margin-top: 15px;
 	min-height: 80vh;

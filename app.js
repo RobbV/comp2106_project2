@@ -5,12 +5,14 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
+//DB connection
+const config = require('./config/globals');
 //passport
 const session = require('express-session');
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
-//DB connection
-const config = require('./config/globals');
+const GitHubStrategy = require('passport-github2').Strategy;
+const partials = require('express-partials');
 
 const index = require('./controllers/index');
 const teams = require('./controllers/teams');
@@ -51,6 +53,21 @@ passport.use(User.createStrategy());
 // session management for users
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+// Use the GitHubStrategy within Passport.
+passport.use(new GitHubStrategy({
+    clientID: config.github.githubClientId,
+    clientSecret: config.github.githubClientSecret,
+    callbackURL: config.github.githubCallbackUrl
+  },
+  function(accessToken, refreshToken, profile, done) {
+    // asynchronous verification, for effect...
+    process.nextTick(function () {
+
+      // and return that user instead.
+      return done(null, profile);
+    });
+  }
+));
 // map the controllers
 app.use('/', index);
 app.use('/teamtracker', teams);

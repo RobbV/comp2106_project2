@@ -5,7 +5,8 @@ const plm = require('passport-local-mongoose');
 const findOrCreate = require('mongoose-findorcreate');
 
 const userSchema = new mongoose.Schema({
-	firstname: String
+	firstname: String,
+	gitHubId: String
 });
 
 //use plm to automatically define username and passport field for the model
